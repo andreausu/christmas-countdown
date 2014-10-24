@@ -31,7 +31,15 @@ seconds_diff = (christmas - curtime).to_i
 
 days_to_christmas = (seconds_diff / (60 * 60 * 24)).abs
 
-if days_to_christmas == 1
+if curtime.day == 25 && curtime.month != 12
+	months_left = 12 - curtime.month
+	if months_left == 1
+		month_text = "a month"
+	else
+		month_text = "#{months_left} months"
+	end
+	text = "Only #{month_text} left to Christmas! 🎅🎄"
+elsif days_to_christmas == 1
 	text = "Only a few hours left to Christmas! 🎅🎄"
 elsif days_to_christmas == 0
 	text = "Christmas has finally arrived! 🎅🎄 Go open your presents! 🎁"
