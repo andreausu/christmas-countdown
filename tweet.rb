@@ -21,15 +21,19 @@ end
 curtime = Time.new
 
 year = curtime.year
-if curtime.month == 12 and curtime.day > 25
+if curtime.month == 12 && curtime.day > 25
   year += 1
 end
 
-christmas = Time.new(year, 12, 25)
+christmas = Time.new(year, 12, 25) # 00:00:00 current timezone
 
-seconds_diff = (christmas - curtime).to_i
+seconds_diff = (christmas - curtime).to_f
 
-days_to_christmas = (seconds_diff / (60 * 60 * 24)).abs
+if seconds_diff > 0
+  days_to_christmas = (seconds_diff / (60 * 60 * 24)).ceil
+else
+  days_to_christmas = 0
+end
 
 if curtime.day == 25 && curtime.month != 12
 	months_left = 12 - curtime.month
@@ -47,10 +51,10 @@ elsif days_to_christmas == 7
 	text = "Only a week left to Christmas! Santa is coming to town! 🎅🎄"
 elsif days_to_christmas <= 100
 	text = "Only #{days_to_christmas} days left to Christmas! 🎅🎄"
-else 
+else
 	text = "#{days_to_christmas} days left to Christmas! 🎅🎄"
 end
 
-puts days_to_christmas.to_s
+puts text
 
 client.update text
