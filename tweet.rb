@@ -37,12 +37,16 @@ end
 
 if curtime.day == 25 && curtime.month != 12
 	months_left = 12 - curtime.month
+  month_text_prefix = ''
 	if months_left == 1
-		month_text = "a month"
+		month_text = 'a month'
 	else
 		month_text = "#{months_left} months"
 	end
-	text = "Only #{month_text} left to Christmas! 🎅🎄"
+  if months_left <= 3
+    month_text_prefix = 'Only '
+  end
+	text = "#{month_text_prefix}#{month_text} left to Christmas! 🎅🎄"
 elsif days_to_christmas == 1
 	text = "Only a few hours left to Christmas! 🎅🎄"
 elsif days_to_christmas == 0
