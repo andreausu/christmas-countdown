@@ -46,17 +46,17 @@ if curtime.day == 25 && curtime.month != 12
   if months_left <= 3
     month_text_prefix = 'Only '
   end
-	text = "#{month_text_prefix}#{month_text} left to Christmas! 🎅🎄"
+	text = "#{month_text_prefix}#{month_text} left to Christmas! 🎅🏻🎄"
 elsif days_to_christmas == 1
-	text = "Only a few hours left to Christmas! 🎅🎄"
+	text = "Only a few hours left to Christmas! 🎅🏻🎄"
 elsif days_to_christmas == 0
-	text = "Christmas has finally arrived! 🎅🎄 Go open your presents! 🎁"
+	text = "Christmas has finally arrived! 🎅🏻🎄 Go open your presents! 🎁"
 elsif days_to_christmas == 7
-	text = "Only a week left to Christmas! Santa is coming to town! 🎅🎄"
+	text = "Only a week left to Christmas! Santa is coming to town! 🎅🏻🎄"
 elsif days_to_christmas <= 100
-	text = "Only #{days_to_christmas} days left to Christmas! 🎅🎄"
+	text = "Only #{days_to_christmas} days left to Christmas! 🎅🏻🎄"
 else
-	text = "#{days_to_christmas} days left to Christmas! 🎅🎄"
+	text = "#{days_to_christmas} days left to Christmas! 🎅🏻🎄"
 end
 
 puts text
